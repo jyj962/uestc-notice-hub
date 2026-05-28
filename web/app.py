@@ -85,21 +85,37 @@ def health():
 
 @app.route("/admin/init")
 def admin_init():
-    """首次初始化并执行一次抓取（适合部署后首次访问）"""
-    from scheduler import run_once
+    """初始化数据库（不抓取，避免超时）"""
+    init_db()
+    return jsonify({"ok": True, "message": "数据库已初始化，请逐个抓取数据源"})
+
+
+@app.route("/admin/fetch/<source_name>")
+def admin_fetch_one(source_name):
+    """逐个抓取单个数据源（避免免费托管超时）"""
+    import config
+    from scheduler import build_scrapers
+    from scraper.models import save_notices, log_fetch
 
     init_db()
+    scrapers = {s.name: s for s in build_scrapers()}
+
+    if source_name not in scrapers:
+        return jsonify({"ok": False, "error": f"未找到数据源: {source_name}", "available": list(scrapers.keys())}), 404
+
     try:
-        added = run_once()
+        notices = scrapers[source_name].run()
+        saved = save_notices(notices) if notices else 0
+        log_fetch(source_name, True, saved)
+        return jsonify({"ok": True, "source": source_name, "fetched": len(notices or []), "saved": saved})
     except Exception as e:
+        log_fetch(source_name, False, 0, str(e))
         return jsonify({"ok": False, "error": str(e)}), 500
 
-    return jsonify({"ok": True, "added": added})
 
-
-@app.route("/admin/fetch")
-def admin_fetch():
-    """手动触发抓取（适合免费托管环境替代定时任务）"""
+@app.route("/admin/fetch-all")
+def admin_fetch_all():
+    """一次性抓取所有数据源（可能超时，建议逐个抓）"""
     from scheduler import run_once
 
     try:

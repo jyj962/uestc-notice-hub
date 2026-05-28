@@ -13,6 +13,9 @@ logs/
 *.dmg
 *.AppImage
 
+# GitHub Pages 生成的文件
+public/
+
 # 编辑器/系统文件
 .vscode/
 .idea/

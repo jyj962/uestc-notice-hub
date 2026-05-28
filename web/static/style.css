@@ -1,0 +1,220 @@
+/* 电子科技大学通知聚合系统 - 看板样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== 顶部导航 ===== */
+.header {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2d6aa0 100%);
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.header .subtitle {
+    font-size: 13px;
+    opacity: 0.8;
+}
+.header .stats-bar {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+}
+.header .stats-bar .stat-num {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* ===== 搜索区 ===== */
+.search-bar {
+    background: #fff;
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e8e8e8;
+}
+.search-bar input {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.search-bar input:focus {
+    border-color: #2d6aa0;
+}
+.search-bar select {
+    padding: 8px 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+}
+.search-bar button {
+    padding: 8px 20px;
+    background: #2d6aa0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.search-bar button:hover {
+    background: #1a3a5c;
+}
+
+/* ===== 分类标签 ===== */
+.category-tags {
+    background: #fff;
+    padding: 8px 24px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e8e8e8;
+}
+.cat-tag {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    transition: all 0.2s;
+    user-select: none;
+}
+.cat-tag:hover {
+    border-color: #2d6aa0;
+    color: #2d6aa0;
+}
+.cat-tag.active {
+    background: #2d6aa0;
+    color: #fff;
+    border-color: #2d6aa0;
+}
+
+/* ===== 通知列表 ===== */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 24px;
+}
+.notice-list {
+    list-style: none;
+}
+.notice-item {
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 16px 20px;
+    border-left: 4px solid #e8e8e8;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+.notice-item:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transform: translateX(2px);
+}
+.notice-item.is-new {
+    border-left-color: #fa8c16;
+    background: #fffbe6;
+}
+.notice-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a3a5c;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+.notice-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #999;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.notice-source {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #fff;
+}
+.notice-summary {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.new-badge {
+    display: inline-block;
+    background: #fa8c16;
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-left: 6px;
+}
+
+/* ===== 空态/加载态 ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    .search-bar {
+        flex-direction: column;
+    }
+    .container {
+        padding: 12px;
+    }
+    .notice-item {
+        padding: 12px;
+    }
+    .notice-title {
+        font-size: 14px;
+    }
+}

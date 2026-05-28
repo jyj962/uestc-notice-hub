@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子科技大学通知聚合</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% raw %}
+<div id="app">
+
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div>
+            <h1>📢 电子科技大学通知聚合</h1>
+            <div class="subtitle">清水河校区 · 机电学院 · 电气工程 | 来源真实 每日更新</div>
+        </div>
+        <div class="stats-bar">
+            <div>📊 累计 <span class="stat-num">{{ stats.total }}</span> 条</div>
+            <div>🆕 今日新增 <span class="stat-num">{{ stats.today_new }}</span> 条</div>
+        </div>
+    </div>
+
+    <!-- 搜索栏 -->
+    <div class="search-bar">
+        <input type="text" v-model="keyword" @keyup.enter="onSearch" placeholder="🔍 搜索通知标题或摘要...">
+        <input type="date" v-model="dateFrom" @change="fetchNotices">
+        <span>至</span>
+        <input type="date" v-model="dateTo" @change="fetchNotices">
+        <button @click="onSearch">搜索</button>
+        <select v-model="activeSources[0]" @change="toggleSource(activeSources[0]); activeSources[0] = ''">
+            <option value="">全部来源</option>
+            <option v-for="s in allSources" :value="s.name" :key="s.name">
+                {{ s.name }}
+            </option>
+        </select>
+    </div>
+
+    <!-- 分类标签 -->
+    <div class="category-tags">
+        <span class="cat-tag"
+              :class="{ active: activeCategories.length === 0 }"
+              @click="activeCategories = []; fetchNotices()">
+            全部
+        </span>
+        <span v-for="cat in allCategories" :key="cat"
+              class="cat-tag"
+              :class="{ active: activeCategories.includes(cat) }"
+              @click="toggleCategory(cat)">
+            {{ cat }}
+        </span>
+    </div>
+
+    <!-- 通知列表 -->
+    <div class="container">
+        <div v-if="loading" class="loading">⏳ 加载中...</div>
+
+        <div v-else-if="notices.length === 0" class="empty-state">
+            <p style="font-size: 48px;">📭</p>
+            <p>暂无通知</p>
+            <p style="font-size: 13px; margin-top: 8px;">
+                请检查网络连接或等待首次抓取完成
+            </p>
+        </div>
+
+        <ul v-else class="notice-list">
+            <li v-for="(n, i) in notices" :key="n.id"
+                class="notice-item"
+                :class="{ 'is-new': isNew(n) }"
+                @click="openLink(n.source_url)">
+                <div class="notice-title">
+                    {{ n.title }}
+                    <span v-if="isNew(n)" class="new-badge">NEW</span>
+                </div>
+                <div class="notice-meta">
+                    <span class="notice-source" :style="{ background: getSourceColor(n.source_category) }">
+                        {{ n.source_name }}
+                    </span>
+                    <span>📅 {{ formatDate(n.date) }}</span>
+                    <span>🏷️ {{ n.source_category }}</span>
+                </div>
+                <div v-if="n.summary" class="notice-summary">{{ n.summary }}</div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+{% endraw %}
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

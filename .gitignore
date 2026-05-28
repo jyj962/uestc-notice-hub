@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# 本地运行时产生的数据
+data/
+logs/
+*.db
+
+# 可执行文件/临时文件
+*.exe
+*.msi
+*.dmg
+*.AppImage
+
+# 编辑器/系统文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

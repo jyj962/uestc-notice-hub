@@ -104,13 +104,34 @@ def admin_fetch_one(source_name):
         return jsonify({"ok": False, "error": f"未找到数据源: {source_name}", "available": list(scrapers.keys())}), 404
 
     try:
-        notices = scrapers[source_name].run()
+        scraper = scrapers[source_name]
+        notices = scraper.run()
         saved = save_notices(notices) if notices else 0
         log_fetch(source_name, True, saved)
         return jsonify({"ok": True, "source": source_name, "fetched": len(notices or []), "saved": saved})
     except Exception as e:
         log_fetch(source_name, False, 0, str(e))
         return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/admin/test-url")
+def admin_test_url():
+    """测试能否访问学校网站"""
+    import requests as req
+    test_urls = {
+        "学校主站": "https://news.uestc.edu.cn/xxgg/xs.htm",
+        "教务处": "https://www.jwc.uestc.edu.cn",
+        "学工部": "https://xgb.uestc.edu.cn",
+        "就业网": "https://jiuye.uestc.edu.cn",
+    }
+    results = {}
+    for name, url in test_urls.items():
+        try:
+            r = req.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+            results[name] = {"status": r.status_code, "ok": r.status_code == 200, "size": len(r.text)}
+        except Exception as e:
+            results[name] = {"status": None, "ok": False, "error": str(e)}
+    return jsonify(results)
 
 
 @app.route("/admin/fetch-all")

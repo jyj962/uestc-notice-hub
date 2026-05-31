@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子科技大学通知聚合</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f6fa; color: #333; }
+        .header { background: linear-gradient(135deg, #1a3a5c 0%, #2d6aa0 100%); color: #fff; padding: 16px 24px; position: sticky; top: 0; z-index: 100; }
+        .header h1 { font-size: 20px; }
+        .header .subtitle { font-size: 13px; opacity: 0.8; }
+        .header .stats { font-size: 13px; margin-top: 4px; }
+        .header .stats .num { font-size: 22px; font-weight: 700; }
+        .search-bar { background: #fff; padding: 12px 24px; display: flex; gap: 10px; flex-wrap: wrap; border-bottom: 1px solid #e8e8e8; }
+        .search-bar input { flex: 1; min-width: 200px; padding: 8px 16px; border: 1px solid #d9d9d9; border-radius: 6px; font-size: 14px; }
+        .search-bar input:focus { border-color: #2d6aa0; outline: none; }
+        .category-tags { background: #fff; padding: 8px 24px; display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid #e8e8e8; }
+        .cat-tag { padding: 4px 14px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 1px solid #d9d9d9; background: #fff; }
+        .cat-tag:hover { border-color: #2d6aa0; color: #2d6aa0; }
+        .cat-tag.active { background: #2d6aa0; color: #fff; border-color: #2d6aa0; }
+        .container { max-width: 960px; margin: 0 auto; padding: 16px 24px; }
+        .notice-list { list-style: none; }
+        .notice-item { background: #fff; margin-bottom: 10px; border-radius: 8px; padding: 16px 20px; border-left: 4px solid #e8e8e8; cursor: pointer; transition: box-shadow 0.2s; }
+        .notice-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+        .notice-item.is-new { border-left-color: #fa8c16; background: #fffbe6; }
+        .notice-title { font-size: 15px; font-weight: 600; color: #1a3a5c; margin-bottom: 6px; }
+        .notice-meta { display: flex; gap: 16px; font-size: 12px; color: #999; flex-wrap: wrap; }
+        .notice-source { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: #2d6aa0; color: #fff; }
+        .notice-summary { margin-top: 6px; font-size: 13px; color: #666; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .new-badge { background: #fa8c16; color: #fff; padding: 1px 6px; border-radius: 4px; font-size: 11px; margin-left: 6px; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #999; }
+        .empty { text-align: center; padding: 60px; color: #999; }
+        @media (max-width: 768px) {
+            .header { padding: 12px 16px; }
+            .search-bar { padding: 8px 16px; }
+            .container { padding: 12px; }
+            .notice-item { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📢 电子科技大学通知聚合</h1>
+        <div class="subtitle">清水河校区 · 机电学院 · 电气工程 | 来源真实 每日更新</div>
+        <div class="stats">📊 共 <span class="num">59</span> 条通知 | 🕐 更新于 2026-05-31 11:41</div>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" onkeyup="searchNotices()" placeholder="🔍 搜索通知标题...">
+    </div>
+    <div class="category-tags" id="categoryTags">
+        <span class="cat-tag active" onclick="filterCategory('')">全部</span><span class="cat-tag" onclick="filterCategory('学校公告')">学校公告</span><span class="cat-tag" onclick="filterCategory('就业招聘')">就业招聘</span><span class="cat-tag" onclick="filterCategory('教务通知')">教务通知</span>
+    </div>
+    <div class="container">
+        <ul class="notice-list" id="noticeList">
+            
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/210efff64f3d46c2a36b3bc4fea61976', '_blank')">
+            <div class="notice-title">11 2026-5电子科技大学首届“AI+”创意校园短视频大赛 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 26-5</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/7e83f9f1850643e5a9fafdd7e4128100', '_blank')">
+            <div class="notice-title">30 2026-4电子科技大学（讯飞杯）首届智能体创意大赛晋级名单公布 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 26-4</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/00d02ebc2c964e00affa49eea47162b4', '_blank')">
+            <div class="notice-title">25 2025-9关于举办第八届大学生网络素养集训营的通知 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-9</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/16f2e1b074074998bcc93da5523b9b6c', '_blank')">
+            <div class="notice-title">17 2025-9“川渝青年说”第四届川渝大学生网络评论大赛 征稿启事 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-9</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/ffb7ab222163415dbd010cb67e2cb7bf', '_blank')">
+            <div class="notice-title">12 2025-7关于开展电子科技大学第十一届校园网络文化节网络文化作品征集展示活动的通知 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-7</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/dc58ba7ca45441f3926f151837ec45f7', '_blank')">
+            <div class="notice-title">29 2025-4电子科技大学2025年网络名师工作室培育支持计划评选结果公示 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-4</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/16aae4fb0d244f03b4b727530b05f5d4', '_blank')">
+            <div class="notice-title">21 2025-4电子科技大学2025年“悦读青春 智启未来”读书月活动通知 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-4</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/f9733b5d6b2446e18150275566696443', '_blank')">
+            <div class="notice-title">8 2025-4关于开展电子科技大学2025年网络名师工作室培育支持计划申报工作的通知 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-4</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/686ae7af149c4a4fa98f938665d55e69', '_blank')">
+            <div class="notice-title">26 2025-12电子科技大学（讯飞杯）首届智能体创意大赛 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-12</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://xgb.uestc.edu.cn/notice/detail/5c793282993c41e3a20e258941f621a4', '_blank')">
+            <div class="notice-title">11 2025-11关于公布第十一届校园网络文化节网络文化作品征集展示活动获奖结果的通知 </div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 25-11</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40583.htm', '_blank')">
+            <div class="notice-title">名师讲堂：互联系统的分散预设时间控制 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40534.htm', '_blank')">
+            <div class="notice-title">学者论坛：Functional Random Lasers: Chirality, Machine Learning, and Stretchable Photonic Devices <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40215.htm', '_blank')">
+            <div class="notice-title">成电讲坛 | 天文目标雷达观测与信息提取技术 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40146.htm', '_blank')">
+            <div class="notice-title">学者论坛：Renormalization and the Principle of Maximum Conformality <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40147.htm', '_blank')">
+            <div class="notice-title">学者论坛：丢番图方程简介 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/40199.htm', '_blank')">
+            <div class="notice-title">学者论坛：固体地球动力学模拟研究进展 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39971.htm', '_blank')">
+            <div class="notice-title">「人文×科技」思想者讲坛第三十一期讲座预告 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39918.htm', '_blank')">
+            <div class="notice-title">学者论坛：The Quest for High-Temperature Superconducting Nickelates <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39858.htm', '_blank')">
+            <div class="notice-title">名师讲堂：Beyond LLMs: A Multi-Paradigm AI Approach <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39439.htm', '_blank')">
+            <div class="notice-title">名师讲堂：From Safety Barrier to Resilience Enhancer: A short review of some of my research <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39327.htm', '_blank')">
+            <div class="notice-title">名师讲堂：Additive Manufacturing of Tomorrow: Future Trends and Developments <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39286.htm', '_blank')">
+            <div class="notice-title">2026年第二届天府孤独症脑科学国际论坛 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39223.htm', '_blank')">
+            <div class="notice-title">学者论坛：基于量子效应的电子-声子解耦机制优化热电材料性能 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39185.htm', '_blank')">
+            <div class="notice-title">学者论坛：铁磁/量子材料各向异性自旋动力学 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/39167.htm', '_blank')">
+            <div class="notice-title">「人文×科技」思想者论坛第三十期讲座预告 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1015/38945.htm', '_blank')">
+            <div class="notice-title">成电下午茶：系统反馈视角下的智能不确定性决策 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1013/38453.htm', '_blank')">
+            <div class="notice-title">成电学子“精彩各不同”的一天系列VLOG（第一季） <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/40159.htm', '_blank')">
+            <div class="notice-title">学校举行树立和践行正确政绩观学习教育专题报告会暨党委理论学习中心组学习（扩大）会议 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/39959.htm', '_blank')">
+            <div class="notice-title">四川省量子科技学院挂牌 副省长任京东出席 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/39097.htm', '_blank')">
+            <div class="notice-title">学校第九届教代会、第十四届工代会第三次会议召开 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/38292.htm', '_blank')">
+            <div class="notice-title">四川省省长施小琳调研对接大学科研成果转化工作：发挥校地科创优势，推动有组织的创新和成果转化落地 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/38271.htm', '_blank')">
+            <div class="notice-title">学校领导班子举行树立和践行正确政绩观学习教育读书班 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/37924.htm', '_blank')">
+            <div class="notice-title">学校召开传达学习全国两会精神专题报告会 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/37806.htm', '_blank')">
+            <div class="notice-title">学校召开2026年全面从严治党工作会 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/37505.htm', '_blank')">
+            <div class="notice-title">电子科技大学党委启动树立和践行正确政绩观学习教育 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/37360.htm', '_blank')">
+            <div class="notice-title">喜报！电子科技大学发表首篇《细胞》（Cell）正刊文章！ <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://news.uestc.edu.cn/info/1002/37308.htm', '_blank')">
+            <div class="notice-title">电子科技大学召开2026年学校工作研讨暨干部培训会 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">学校主站</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://www.jwc.uestc.edu.cn/pwdrule;jsessionid=FD8B8778417FA559C2B0F552D52937BA', '_blank')">
+            <div class="notice-title">登录规则 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://j.map.baidu.com/e2/gec', '_blank')">
+            <div class="notice-title">成都市建设北路二段四号 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://j.map.baidu.com/15/4jJ', '_blank')">
+            <div class="notice-title">成都市高新区(西区)西源大道2006号 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://xgb.uestc.edu.cn/depart/office', '_blank')">
+            <div class="notice-title">各部门联系方式 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://www.uestc.edu.cn', '_blank')">
+            <div class="notice-title">电子科技大学官网 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://dxs.moe.gov.cn/zx/', '_blank')">
+            <div class="notice-title">教育部中国大学生在线 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://www.uestc.edu.cn/db43a9991ac59e09f0e738c16cf59a6d.html?n=8e7z368tn51', '_blank')">
+            <div class="notice-title">电子科技大学各学院(部) <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://masterblog.uestc.edu.cn/', '_blank')">
+            <div class="notice-title">师说·名师博客 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://bbs.uestc.edu.cn/', '_blank')">
+            <div class="notice-title">清水河畔论坛 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">党委学工部</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 学校公告</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item is-new" onclick="window.open('https://www.mohrss.gov.cn/SYrlzyhshbzb/fwyd/SYkaoshizhaopin/zyhgjjgsydwgkzp/', '_blank')">
+            <div class="notice-title">中央和国家机关所属事业单位招聘平台 <span class="new-badge">NEW</span></div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-31</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/fnb8kus7bta9', '_blank')">
+            <div class="notice-title">发布日期：2026-05-27 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-27</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/fg8vyfaqnima', '_blank')">
+            <div class="notice-title">【线下双选】电子科技大学2026年春季系列双选会报名公告发布日期：2026-05-27点击数：3485作者：张倩曦 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-27</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/flxa52lt0s8x', '_blank')">
+            <div class="notice-title">发布日期：2026-05-13 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-13</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/flx3q5tnrrpe', '_blank')">
+            <div class="notice-title">关于学校本科生网签系统恢复访问的说明发布日期：2026-05-13点击数：178作者：张彦昭 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-13</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/flsn81bovhtt', '_blank')">
+            <div class="notice-title">关于开展2026届选调生校内实践活动的通知发布日期：2026-05-12点击数：291作者：张彦昭 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-05-12</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://study.uestc.cn/', '_blank')">
+            <div class="notice-title">成电学堂 </div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-03-11</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://www.jwc.uestc.edu.cn/info/db9f2b24d32e8b2aeb848af78af4699d', '_blank')">
+            <div class="notice-title">虚仿实验平台 </div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-03-11</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('http://uestc.co.cnki.net', '_blank')">
+            <div class="notice-title">毕业设计管理 </div>
+            <div class="notice-meta">
+                <span class="notice-source">教务处</span>
+                <span>📅 2026-03-11</span>
+                <span>🏷️ 教务通知</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/fek4lfqnb8qq', '_blank')">
+            <div class="notice-title">电子科技大学2026年上半年校园招聘邀请函发布日期：2026-02-28点击数：6550作者：张彦昭 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2026-02-28</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/evfozvx9pkaq', '_blank')">
+            <div class="notice-title">用人单位在电子科技大学就业网和网签系统重置密码的说明发布日期：2025-09-03点击数：5194作者：张彦昭 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2025-09-03</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/ewxn5vyapjb6', '_blank')">
+            <div class="notice-title">电子科技大学2026届“本科生网签与毕业去向登记”说明发布日期：2025-09-03点击数：10217作者：张彦昭 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2025-09-03</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        <li class="notice-item " onclick="window.open('https://jiuye.uestc.edu.cn/career/news/notice/eqx2u597n476', '_blank')">
+            <div class="notice-title">用人单位在“成电就业”微信号发布信息的说明发布日期：2024-10-15点击数：7430作者：就业信息员 </div>
+            <div class="notice-meta">
+                <span class="notice-source">本科生就业网</span>
+                <span>📅 2024-10-15</span>
+                <span>🏷️ 就业招聘</span>
+            </div>
+            <div class="notice-summary"></div>
+        </li>
+        </ul>
+    </div>
+    <div class="footer">
+        电子科技大学通知聚合系统 | 数据来源：学校官网、教务处、学工部、就业网等
+    </div>
+    <script>
+        function searchNotices() {
+            const keyword = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.notice-item');
+            items.forEach(item => {
+                const title = item.querySelector('.notice-title').textContent.toLowerCase();
+                item.style.display = title.includes(keyword) ? '' : 'none';
+            });
+        }
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-tag').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            const items = document.querySelectorAll('.notice-item');
+            items.forEach(item => {
+                if (!cat) { item.style.display = ''; return; }
+                const source = item.querySelector('.notice-meta').textContent;
+                item.style.display = source.includes(cat) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

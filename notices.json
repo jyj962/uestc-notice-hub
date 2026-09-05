@@ -1,0 +1,616 @@
+{
+  "updated_at": "2026-09-05 13:17:42",
+  "count": 61,
+  "notices": [
+    {
+      "id": "a61d8c2710f44cbcddd6e36ab2d7d6de",
+      "title": "学者论坛：Probabilistic scaling & propagation of randomness under nonlinear dispersive flow",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/43215.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "3a9c0c11a69c513c858d2a13502445dc",
+      "title": "「人文×科技」思想者讲坛第三十八期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/43160.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "4daccaf397cefcc6d0ba9c5e0361caf6",
+      "title": "电子科技大学“具身智能与工业软件前沿交叉研讨会”",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/42644.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "f441220e76525ab94a9abf62a372b873",
+      "title": "2026中国康复医学会智能康复专业委员会学术年会暨第五届智能康复学术与产业大会",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/42478.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "a7bb6818d8b78124fc1c84f5e7399af3",
+      "title": "「人文×科技」思想者论坛第三十七期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/42116.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "a78f0d61617ccbb6014bcd24231f1d22",
+      "title": "学者论坛：基于 AIS 信号的海事监视被动 TOA 定位",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/42028.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "97d6ff3f3369e019445eac052b159070",
+      "title": "学者论坛：图像处理—从变分法到深度学习",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41989.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "4547a6de50cdc61c9b78cf07a61c879d",
+      "title": "学者论坛：The Wellbeing-Health AI Framework for Intelligent Stress Monitoring",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41966.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "c5e1c3a3a4448f891dc6e5bac910aeb4",
+      "title": "学者论坛：Pioneering Smart Electromagnetic Environments: Physics-Driven AI & Wave Engineering with Electromagnetic Skins",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41829.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "bb8c35c3192ba2b66df514fe394ecae8",
+      "title": "学者论坛：复杂与智能系统高性能计算方法",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41278.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "3efe73c0956119b9f2cb8430790bfdab",
+      "title": "「人文×科技」思想者论坛第三十六期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41274.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "e28338ad9c1f1ecdf2647d1f6aad75e9",
+      "title": "「人文×科技」思想者论坛第三十五期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41265.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "1e6e46b7f2f9ad9b7b75bcec20461aec",
+      "title": "「人文×科技」思想者论坛第三十四期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41264.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "2f6ad2f3b8722989a9e821826fcc3bcc",
+      "title": "学者论坛：人工智能与智能控制专题",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41086.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "d7142c2b5b0f422319a794e130d43013",
+      "title": "「人文×科技」思想者论坛第三十三期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41118.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "5f2a8a3c10dc208dce273e88c7143b39",
+      "title": "「人文×科技」思想者论坛第三十二期讲座预告",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1015/41103.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "5c3affa3547b0a0f50e1b6f19fc51566",
+      "title": "成电学子“精彩各不同”的一天系列VLOG（第二季）",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1013/41836.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "d6443e379fcf6c0d491b306d25cc8879",
+      "title": "成电学子“精彩各不同”的一天系列VLOG（第一季）",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1013/38453.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "b314a093f3d440b7d63a9f1e5a6f1bf7",
+      "title": "学校隆重举行2026级学生开学典礼",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/43042.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "c821cff148157358020ded30dc134b0e",
+      "title": "胡俊校长寄语2026级新生：七秩再出发 携手向未来",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/43036.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "8c0ff2fb22aaefbd4f164a5d1fd451e8",
+      "title": "学校召开2026年秋季学期工作会暨干部培训会",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42955.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "189d1a7a32ac0f9a322caffbcae88c15",
+      "title": "学校召开领导班子务虚会暨党委中心组集体学习会议",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42900.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "28525b16de4ed16ecc9991e4f580befd",
+      "title": "学校党委理论学习中心组召开集体学习会议",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42412.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "b778b96c2d4a531498ab867a3d64b795",
+      "title": "学校召开中层干部大会",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42411.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "f32bb00ff462c465f4e5157d0700d282",
+      "title": "电子科技大学70周年校庆公告 （第二号）",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42290.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "34afebaf7dc3b3f5299ceb429c5be0c7",
+      "title": "电子科技大学获2025年度国家科学技术奖",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/42006.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "141eee61777c09cc4227d2fae1b87db6",
+      "title": "电子科技大学隆重举行2026年学生毕业典礼暨学位授予仪式",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/41374.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "a2391a2710960f9dd012db5376947005",
+      "title": "学校党委理论学习中心组举行集体学习会议",
+      "date": "2026-09-05",
+      "source_url": "https://news.uestc.edu.cn/info/1002/41245.htm",
+      "summary": "",
+      "source_name": "学校主站",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "1deae00458fdcd2af921b263850bfe62",
+      "title": "登录规则",
+      "date": "2026-09-05",
+      "source_url": "https://www.jwc.uestc.edu.cn/pwdrule;jsessionid=028894457821567458F4E74B556585E9",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "f02a7d6b37fdfa136653dbeb2b1f8497",
+      "title": "成电学堂",
+      "date": "2026-03-11",
+      "source_url": "https://study.uestc.cn/",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "ae9d403de3411814145985965416238b",
+      "title": "虚仿实验平台",
+      "date": "2026-03-11",
+      "source_url": "https://www.jwc.uestc.edu.cn/info/db9f2b24d32e8b2aeb848af78af4699d",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "91d7b53988503cbe696175d1bac7243c",
+      "title": "毕业设计管理",
+      "date": "2026-03-11",
+      "source_url": "http://uestc.co.cnki.net",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "56498ebdf7eb9623a2fcb5fa2e9b763a",
+      "title": "成都市建设北路二段四号",
+      "date": "2026-09-05",
+      "source_url": "https://j.map.baidu.com/e2/gec",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "3ae73c72b10ec1d42078b6a6fe28e375",
+      "title": "成都市高新区(西区)西源大道2006号",
+      "date": "2026-09-05",
+      "source_url": "https://j.map.baidu.com/15/4jJ",
+      "summary": "",
+      "source_name": "教务处",
+      "source_category": "教务通知",
+      "source_type": "web"
+    },
+    {
+      "id": "74137f0bc3d0e4757ce56840d05f6584",
+      "title": "21 2026-7活动预告 | 2026年大学生“AI+信息素养”大赛本研双赛道开启报名",
+      "date": "26-7",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/2b892f75f71840238e2352e016089c4f",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "5666681d6aca62cadb886da445da8a3d",
+      "title": "15 2026-6电子科技大学（讯飞杯）首届智能体创意大赛获奖名单公示",
+      "date": "26-6",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/0a67e5ac18514cc89eb4b2740fba4001",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "59c2163e676d4ea60f75075033d6f02b",
+      "title": "11 2026-5电子科技大学首届“AI+”创意校园短视频大赛",
+      "date": "26-5",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/210efff64f3d46c2a36b3bc4fea61976",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "9b725759570568ac71245442bd43a001",
+      "title": "30 2026-4电子科技大学（讯飞杯）首届智能体创意大赛晋级名单公布",
+      "date": "26-4",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/7e83f9f1850643e5a9fafdd7e4128100",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "e2a1a00e66f50e059629dc0817d6c06d",
+      "title": "26 2025-12电子科技大学（讯飞杯）首届智能体创意大赛",
+      "date": "25-12",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/686ae7af149c4a4fa98f938665d55e69",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "cc74abed034f737a7949ef843ee69772",
+      "title": "11 2025-11关于公布第十一届校园网络文化节网络文化作品征集展示活动获奖结果的通知",
+      "date": "25-11",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/5c793282993c41e3a20e258941f621a4",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "e0840ecbe90f0cad5c84bc932bc0e139",
+      "title": "25 2025-9关于举办第八届大学生网络素养集训营的通知",
+      "date": "25-9",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/00d02ebc2c964e00affa49eea47162b4",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "6b412afd43ab5596f1084ee1ce35f684",
+      "title": "17 2025-9“川渝青年说”第四届川渝大学生网络评论大赛 征稿启事",
+      "date": "25-9",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/16f2e1b074074998bcc93da5523b9b6c",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "3660ba40bf46e1960298407542719561",
+      "title": "12 2025-7关于开展电子科技大学第十一届校园网络文化节网络文化作品征集展示活动的通知",
+      "date": "25-7",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/ffb7ab222163415dbd010cb67e2cb7bf",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "918ae531a57174b6d8d2fcd8229eb95e",
+      "title": "29 2025-4电子科技大学2025年网络名师工作室培育支持计划评选结果公示",
+      "date": "25-4",
+      "source_url": "https://xgb.uestc.edu.cn/notice/detail/dc58ba7ca45441f3926f151837ec45f7",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "c4b7d928f296a12474a2122d4632cc08",
+      "title": "各部门联系方式",
+      "date": "2026-09-05",
+      "source_url": "https://xgb.uestc.edu.cn/depart/office",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "bab9e627780da301036f07f1fda162d4",
+      "title": "电子科技大学官网",
+      "date": "2026-09-05",
+      "source_url": "https://www.uestc.edu.cn",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "89d04dcf58305125b46851f1af3c1ad3",
+      "title": "教育部中国大学生在线",
+      "date": "2026-09-05",
+      "source_url": "https://dxs.moe.gov.cn/zx/",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "c8a3a0da51bb81cb73498c490f1b7d12",
+      "title": "电子科技大学各学院(部)",
+      "date": "2026-09-05",
+      "source_url": "https://www.uestc.edu.cn/db43a9991ac59e09f0e738c16cf59a6d.html?n=8e7z368tn51",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "3d32804dc5cc85d0e05c78d19d0d0119",
+      "title": "师说·名师博客",
+      "date": "2026-09-05",
+      "source_url": "https://masterblog.uestc.edu.cn/",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "de804c300ba4ea03b624cd133fe6acbb",
+      "title": "清水河畔论坛",
+      "date": "2026-09-05",
+      "source_url": "https://bbs.uestc.edu.cn/",
+      "summary": "",
+      "source_name": "党委学工部",
+      "source_category": "学校公告",
+      "source_type": "web"
+    },
+    {
+      "id": "4781b8eebd79ae9dcc5780e565519932",
+      "title": "电子科技大学2026年校友企业专场双选会邀请函发布日期：2026-09-02点击数：800作者：张倩曦",
+      "date": "2026-09-02",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fwzxb5uw4s8y",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "22b054f7f707d6dfbf1ac595369d96b4",
+      "title": "【致用人单位】电子科技大学2026年下半年校园招聘邀请函发布日期：2026-08-21点击数：2820作者：张彦昭",
+      "date": "2026-08-21",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fvsxgrqe6jup",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "fce905890c93ff53e76af1a86d0582b2",
+      "title": "用人单位在电子科技大学就业网和网签系统重置密码的说明发布日期：2025-09-03点击数：6471作者：张彦昭",
+      "date": "2025-09-03",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/evfozvx9pkaq",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "494c8763655deafd290bb27f3becc9a8",
+      "title": "用人单位在“成电就业”微信号发布信息的说明发布日期：2024-10-15点击数：8881作者：就业信息员",
+      "date": "2024-10-15",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/eqx2u597n476",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "d68dc516100fe526022880892cc74791",
+      "title": "2026年暑期学生就业服务工作安排发布日期：2026-07-22点击数：1456作者：张彦昭",
+      "date": "2026-07-22",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fsv82eenu7ep",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "2867fc7618e937bfee06089881c47522",
+      "title": "电子科技大学关于招聘科研助理的启事（2026年7月22日）发布日期：2026-07-22点击数：889作者：张彦昭",
+      "date": "2026-07-22",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fsv1qsiyla0x",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "ab8f4b2075207340599c1b890eb58cf6",
+      "title": "电子科技大学关于招聘管理助理的启事（2026年7月22日）发布日期：2026-07-22点击数：590作者：张彦昭",
+      "date": "2026-07-22",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fsv1mspek075",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "3a87af82e1f874547f37c122dbff1a18",
+      "title": "电子科技大学关于招聘科研助理的启事（2026年7月7日）发布日期：2026-07-07点击数：773作者：张彦昭",
+      "date": "2026-07-07",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/frcipmc3if42",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "9cd00bc30648b373a41cbc159f978ba9",
+      "title": "“夏季冲刺·优企引才”四川省2026届高校毕业生线上专场招聘会发布日期：2026-06-30点击数：902作者：曾子芸",
+      "date": "2026-06-30",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fqnv8smi1m2q",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "0a76f3f7b835d770df5ee607e04dce1d",
+      "title": "关于【2026届本科生离校后】使用网签系统签约及登记去向的说明发布日期：2026-06-26点击数：1407作者：张彦昭",
+      "date": "2026-06-26",
+      "source_url": "https://jiuye.uestc.edu.cn/career/news/notice/fqa241rxh4w1",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    },
+    {
+      "id": "174eee93fc7634c6a189165c978415c0",
+      "title": "中央和国家机关所属事业单位招聘平台",
+      "date": "2026-09-05",
+      "source_url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/fwyd/SYkaoshizhaopin/zyhgjjgsydwgkzp/",
+      "summary": "",
+      "source_name": "本科生就业网",
+      "source_category": "就业招聘",
+      "source_type": "web"
+    }
+  ]
+}
